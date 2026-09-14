@@ -5,7 +5,7 @@ services:
     env_file:
       - .env
     ports:
-      - "8000:8000"
+      - "9821:9821"
     volumes:
       - key_data:/data
 
