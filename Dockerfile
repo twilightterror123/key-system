@@ -8,6 +8,6 @@ COPY bot ./bot
 COPY client ./client
 
 ENV DATABASE_PATH=/data/licenses.db
-EXPOSE 8000
+EXPOSE 9821
 
-CMD ["uvicorn", "server.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "server.main:app", "--host", "0.0.0.0", "--port", "9821"]
