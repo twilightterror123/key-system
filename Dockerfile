@@ -4,6 +4,8 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 COPY server ./server
+COPY bot ./bot
+COPY client ./client
 
 ENV DATABASE_PATH=/data/licenses.db
 EXPOSE 8000
