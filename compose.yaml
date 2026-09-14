@@ -1,0 +1,22 @@
+services:
+  key-server:
+    build: .
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    volumes:
+      - key_data:/data
+
+  discord-bot:
+    build: .
+    restart: unless-stopped
+    env_file:
+      - .env
+    command: ["python", "bot/bot.py"]
+    depends_on:
+      - key-server
+
+volumes:
+  key_data:
